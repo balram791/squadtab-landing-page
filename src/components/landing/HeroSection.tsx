@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Sparkles } from "lucide-react";
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-hero">
+  return <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-hero">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-72 h-72 bg-squadtab-mint rounded-full blur-3xl opacity-60 animate-float" />
@@ -16,7 +14,7 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-border mb-8 animate-fade-up">
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-secondary-foreground">Now in India & UK</span>
+            <span className="text-sm font-medium text-secondary-foreground">Upcoming</span>
           </div>
 
           {/* Main Headline */}
@@ -37,11 +35,7 @@ const HeroSection = () => {
               Get Early Access
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="rounded-full px-8 py-6 text-lg font-semibold border-2 hover:bg-secondary transition-all"
-            >
+            <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-lg font-semibold border-2 hover:bg-secondary transition-all">
               <Users className="mr-2 w-5 h-5" />
               See How It Works
             </Button>
@@ -52,17 +46,13 @@ const HeroSection = () => {
             <p className="text-sm text-muted-foreground mb-4">Trusted by friend groups everywhere</p>
             <div className="flex items-center justify-center gap-1">
               <div className="flex -space-x-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-full border-2 border-background bg-muted flex items-center justify-center"
-                    style={{ backgroundColor: `hsl(${174 + i * 30} 40% 85%)` }}
-                  >
+                {[1, 2, 3, 4, 5].map(i => <div key={i} className="w-10 h-10 rounded-full border-2 border-background bg-muted flex items-center justify-center" style={{
+                backgroundColor: `hsl(${174 + i * 30} 40% 85%)`
+              }}>
                     <span className="text-xs font-semibold text-foreground/70">
                       {String.fromCharCode(64 + i)}
                     </span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
               <span className="ml-4 text-sm text-muted-foreground">
                 <strong className="text-foreground">2,500+</strong> squads on the waitlist
@@ -150,8 +140,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
