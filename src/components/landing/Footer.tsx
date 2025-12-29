@@ -24,10 +24,10 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Twitter, href: "https://twitter.com/squadtab", label: "Twitter" },
-    { icon: Instagram, href: "https://instagram.com/squadtab", label: "Instagram" },
+    { icon: Twitter, href: "https://twitter.com/InfoSquadTab", label: "Twitter" },
+    { icon: Instagram, href: "https://instagram.com/infosquadtab", label: "Instagram" },
     { icon: Linkedin, href: "https://linkedin.com/company/squadtab", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:hello@squadtab.co.uk", label: "Email" },
+    { icon: Mail, href: "mailto:sales.squadtab@hotmail.com", label: "Email" },
   ];
 
   return (
