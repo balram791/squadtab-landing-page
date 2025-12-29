@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Sparkles } from "lucide-react";
+import heroMockup from "@/assets/hero-mockup.png";
+
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-hero">
       {/* Background decorations */}
@@ -64,57 +66,17 @@ const HeroSection = () => {
         {/* Hero Visual */}
         <div className="mt-16 max-w-5xl mx-auto animate-scale-in [animation-delay:500ms] opacity-0">
           <div className="relative">
-            {/* Phone mockup */}
-            <div className="relative mx-auto w-64 sm:w-72 md:w-80">
-              <div className="absolute inset-0 bg-primary/20 rounded-[3rem] blur-2xl transform scale-90" />
-              <div className="relative bg-foreground rounded-[2.5rem] p-2 shadow-2xl">
-                <div className="bg-background rounded-[2rem] overflow-hidden">
-                  {/* App screen mockup */}
-                  <div className="aspect-[9/19] bg-gradient-to-b from-background to-muted p-4">
-                    <div className="flex items-center justify-between mb-6">
-                      <div>
-                        <p className="text-xs text-muted-foreground">Good morning</p>
-                        <p className="font-display font-bold text-foreground">Squad Trip 🏖️</p>
-                      </div>
-                      <div className="w-8 h-8 rounded-full bg-primary/10" />
-                    </div>
-                    
-                    {/* Balance cards */}
-                    <div className="space-y-3">
-                      <div className="bg-card rounded-2xl p-4 shadow-soft">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm text-muted-foreground">You owe</span>
-                          <span className="text-xs px-2 py-1 bg-accent/10 text-accent rounded-full">3 people</span>
-                        </div>
-                        <p className="text-2xl font-display font-bold text-foreground">£127.50</p>
-                      </div>
-                      
-                      <div className="bg-primary/10 rounded-2xl p-4">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm text-muted-foreground">You're owed</span>
-                          <span className="text-xs px-2 py-1 bg-primary/20 text-primary rounded-full">2 people</span>
-                        </div>
-                        <p className="text-2xl font-display font-bold text-primary">£85.00</p>
-                      </div>
-
-                      <div className="flex gap-2 mt-4">
-                        <div className="flex-1 bg-card rounded-xl p-3 text-center shadow-soft">
-                          <p className="text-xs text-muted-foreground">Members</p>
-                          <p className="font-display font-bold text-foreground">6</p>
-                        </div>
-                        <div className="flex-1 bg-card rounded-xl p-3 text-center shadow-soft">
-                          <p className="text-xs text-muted-foreground">Expenses</p>
-                          <p className="font-display font-bold text-foreground">14</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Phone mockup image */}
+            <div className="relative mx-auto w-72 sm:w-80 md:w-96 lg:w-[450px]">
+              <img 
+                src={heroMockup} 
+                alt="SquadTab app mockup showing expense splitting features" 
+                className="relative z-10 w-full h-auto drop-shadow-2xl"
+              />
             </div>
 
             {/* Floating cards */}
-            <div className="hidden md:block absolute top-1/4 -left-8 lg:left-8 bg-card rounded-2xl p-4 shadow-card animate-float">
+            <div className="hidden md:block absolute top-1/4 -left-8 lg:left-8 bg-card rounded-2xl p-4 shadow-card animate-float z-20">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-squadtab-mint flex items-center justify-center">
                   <span className="text-sm font-semibold">🍕</span>
@@ -126,7 +88,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="hidden md:block absolute top-1/2 -right-8 lg:right-8 bg-card rounded-2xl p-4 shadow-card animate-float-delayed">
+            <div className="hidden md:block absolute top-1/2 -right-8 lg:right-8 bg-card rounded-2xl p-4 shadow-card animate-float-delayed z-20">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-squadtab-peach flex items-center justify-center">
                   <span className="text-sm font-semibold">✈️</span>
