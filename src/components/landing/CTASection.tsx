@@ -24,17 +24,35 @@ const CTASection = () => {
 
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setEmail("");
-    
-    toast({
-      title: "You're on the list! 🎉",
-      description: "We'll notify you as soon as SquadTab launches.",
-    });
+    try {
+      const response = await fetch("https://formspree.io/f/xzdbozql", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setEmail("");
+        toast({
+          title: "You're on the list! 🎉",
+          description: "We'll notify you as soon as SquadTab launches.",
+        });
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
